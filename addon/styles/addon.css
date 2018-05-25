@@ -47,6 +47,21 @@
     visibility: initial;
 }
 
+.drop-target {
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.show-overlay.hoverable > .drop-target > .target {
+    /* Only the target area itself is visible initially, and it
+       doesn't have any content. But this makes it eligible for
+       mouse events. */
+    visibility: initial;
+}
+
+
 .overlay-scrim {
     width: 200vw;
     height: 200vh;

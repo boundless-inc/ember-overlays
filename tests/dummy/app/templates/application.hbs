@@ -31,14 +31,15 @@
 
 {{#overlay-marks as |mark|}}
   {{#if (not-eq mark.id "advanced")}}
-    {{create-overlay at=mark
-                   hoverable=hoverable
-                   label=(humanize mark.id)
-                   class=mark.id
-                   onclick=(action "focusOn" mark.id)
-                   dismiss=(action "focusOn" null)
-                   focused=(eq mark.id focusedId)
-                   highlighted=(eq mark.id highlightedId) }}
+    {{drop-target-overlay at=mark
+      hoverable=hoverable
+      label=(humanize mark.id)
+      class=mark.id
+      onclick=(action "focusOn" mark.id)
+      dismiss=(action "focusOn" null)
+      focused=(eq mark.id focusedId)
+      highlighted=(eq mark.id highlightedId)}}
+
   {{/if}}
 {{/overlay-marks}}
 

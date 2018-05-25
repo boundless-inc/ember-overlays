@@ -1,0 +1,47 @@
+<style>
+.drop-target-edge {
+  z-index: 1;
+  display: inline-block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+}
+.top, .bottom {
+  width: 100%
+}
+.right, .left {
+  height: 100%;
+}
+.bottom {
+  background-color: blue;
+  top: 100%;
+}
+.top {
+  top: 0px;
+  background-color: red;
+}
+.right {
+  background-color: green;
+  left:100%;
+}
+.left {
+  background-color: yellow;
+  right: 100%;
+}
+
+</style>
+
+<div class='drop-target-edge top'>
+</div>
+<div class='drop-target-edge right'>
+</div>
+<div class='drop-target-edge bottom'>
+</div>
+<div class='drop-target-edge left'>
+</div>
+
+<div class="drop-target">
+  <div class="target" onmouseenter={{action "beginHover"}} onmouseleave={{action "endHover"}} onclick={{action "targetClicked" }}>
+    {{#if reveal}}{{yield}}{{/if}}
+  </div>
+</div>
