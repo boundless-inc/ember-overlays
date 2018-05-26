@@ -8,6 +8,6 @@ export default Ember.Component.extend({
   marks: Ember.computed('service.marks', function() {
     let group = this.get('group') || 'default';
     let id = this.get('id');
-    return this.get('service.marks').filter(m => m.group === group && (id == null || m.id === id));
+    return this.get('service.marks').filter(m => m.group === group && (id == null || m.id === id)).reverse();
   })
 });
